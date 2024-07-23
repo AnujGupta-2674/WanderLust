@@ -1,0 +1,30 @@
+<% layout('/layouts/boilerplate') %>
+
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <h3 class="text-center">Listing Details</h3>
+          <div class="card mt-3" style="width: 100%;">
+            <img src="<%= listing.image %>" class="card-img-top" alt="listing image" style="height: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">
+                <%= listing.title %>
+              </h5>
+              <p class="card-text">
+                Price: $<%= listing.price %><br>
+                  Location: <%= listing.location %><br>
+                    Country: <%= listing.country %>
+              </p>
+              <div class="d-flex justify-content-between">
+                <a href="/listings/<%= listing._id %>/edit" class="btn btn-primary">Edit this Listing</a>
+                <form method="POST" action="/listings/<%=listing._id%>?_method=DELETE">
+                  <button type="submit" class="btn btn-danger">Delete this Listing</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
