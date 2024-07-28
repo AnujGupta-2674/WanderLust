@@ -6,14 +6,14 @@
     </form> -->
     <div class="row rows-cols-lg-3 row-cols-md-3 row-cols-sm-1">
       <% for(let listing of allListings) { %>
-        <a href="/listings/<%= listing.id %>" class="img-link">
+        <a href="/listings/<%= listing.id %>/show" class="img-link">
           <div class="card box mt-5 " style="width: 20rem">
             <img src="<%= listing.image %>" class="card-img-top" alt="listing image" style="height: 18rem">
             <div class="card-body">
               <p class="card-text">
                 <%= listing.title %>
                   <br>
-                  <%= listing.price %>
+                  &#8377;<%= listing.price.toLocaleString("en-IN") %>
                     <br>
                     <%= listing.location %>
                       <br>
